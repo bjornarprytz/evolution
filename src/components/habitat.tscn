@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvr4635up2jck"]
+
+[ext_resource type="Script" path="res://components/habitat.gd" id="1_vjb6k"]
+
+[node name="Habitat" type="Node2D"]
+script = ExtResource("1_vjb6k")

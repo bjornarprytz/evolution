@@ -1,0 +1,84 @@
+[gd_scene load_steps=16 format=3 uid="uid://c5prpbinpodo5"]
+
+[ext_resource type="Texture2D" uid="uid://do6kwkvd83of2" path="res://assets/die-q.png" id="1_5ih5k"]
+[ext_resource type="Texture2D" uid="uid://croewfggvhk8q" path="res://assets/die-1.png" id="1_kf6sy"]
+[ext_resource type="Script" path="res://components/die.gd" id="1_thpfe"]
+[ext_resource type="Texture2D" uid="uid://dn22fewcva585" path="res://assets/die-2.png" id="2_8xsv1"]
+[ext_resource type="Texture2D" uid="uid://dvvcjwbaq3d48" path="res://assets/die-0.png" id="2_kmdjp"]
+[ext_resource type="Texture2D" uid="uid://b28cni1slxft4" path="res://assets/die-3.png" id="3_8uwnn"]
+[ext_resource type="Texture2D" uid="uid://dg2tmvq5g4qmd" path="res://assets/die-4.png" id="4_wfuod"]
+[ext_resource type="Texture2D" uid="uid://b31bx1nhmxr6b" path="res://assets/die-5.png" id="5_ymi1n"]
+[ext_resource type="Texture2D" uid="uid://cqjx0wn5634ao" path="res://assets/die-6.png" id="6_xhtle"]
+[ext_resource type="Texture2D" uid="uid://b52ot6nmex2vc" path="res://assets/die-7.png" id="9_vahou"]
+[ext_resource type="Texture2D" uid="uid://dwd46krxysdg0" path="res://assets/die-8.png" id="10_fhxas"]
+[ext_resource type="Texture2D" uid="uid://cema6w2jthamq" path="res://assets/die-9.png" id="11_nptwr"]
+[ext_resource type="FontFile" uid="uid://clut606wnxi5g" path="res://assets/VT323-Regular.ttf" id="13_mgghw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pkuaa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kmdjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_kf6sy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8xsv1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8uwnn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wfuod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ymi1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xhtle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vahou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhxas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_nptwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_5ih5k")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="Theme" id="Theme_tvh2s"]
+default_font = ExtResource("13_mgghw")
+default_font_size = 128
+
+[node name="Die" type="Control"]
+custom_minimum_size = Vector2(16, 22)
+layout_mode = 3
+offset_right = 16.0
+offset_bottom = 22.0
+script = ExtResource("1_thpfe")
+
+[node name="Faces" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_pkuaa")
+animation = &"new_animation"
+
+[node name="Family" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 16.0
+offset_right = 320.0
+offset_bottom = 156.0
+scale = Vector2(0.05, 0.05)
+theme = SubResource("Theme_tvh2s")
+bbcode_enabled = true
+text = "[center]DOG"
+scroll_active = false
